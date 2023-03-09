@@ -1,0 +1,72 @@
+﻿<Window x:Class="Reveal.Sdk.Samples.UpMedia.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:core="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Reveal.Sdk.Samples.UpMedia.Wpf"
+        mc:Ignorable="d"
+        Title="Up Media" Height="600" Width="800"
+        Background="{StaticResource BackGroundColorBrush}"
+        WindowState="Maximized">
+    <Window.Resources>
+        <core:Double x:Key="HeatherItemsheight">76</core:Double>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" Click="MenuItem_Click_New" />
+                <MenuItem Header="_Open" Click="MenuItem_Click_Open" />
+                <Separator />
+                <MenuItem Header="_Exit" Click="MenuItem_Click_Exit"/>
+            </MenuItem>
+        </Menu>
+        <TabControl Name="_tabControl">
+            <TabItem>
+                <TabItem.Header>
+                    <Border BorderBrush="{x:Null}" Width="100" Height="{StaticResource HeatherItemsheight}">
+                        <TextBlock Text="Sales" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </TabItem.Header>
+
+                <local:Sales/>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Border BorderBrush="{x:Null}" Width="100" Height="{StaticResource HeatherItemsheight}">
+                        <TextBlock Text="Marketing" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </TabItem.Header>
+
+                <local:Marketing/>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Border BorderBrush="{x:Null}" Width="100" Height="{StaticResource HeatherItemsheight}">
+                        <TextBlock Text="Campaigns" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </TabItem.Header>
+
+                <local:Campaigns/>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Border BorderBrush="{x:Null}" Width="120" Height="{StaticResource HeatherItemsheight}">
+                        <TextBlock Text="Manufacturing" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </TabItem.Header>
+
+                <local:Manufacturing/>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Border BorderBrush="{x:Null}" Width="120" Height="{StaticResource HeatherItemsheight}">
+                        <TextBlock Text="Create Dashboard" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </TabItem.Header>
+
+                <local:EmptyDashboard/>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
