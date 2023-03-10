@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
+using static System.Net.WebRequestMethods;
 
 namespace Reveal.Sdk.Samples.UpMedia.Wpf
 {
@@ -38,17 +39,20 @@ namespace Reveal.Sdk.Samples.UpMedia.Wpf
             var datasources = new List<RVDashboardDataSource>();
             var datasourceItems = new List<RVDataSourceItem>();
 
-            var northWindCustomersDatasource = new RVWebResourceDataSource();
-            northWindCustomersDatasource.Id = "northwindCustomersDataSource";
-            northWindCustomersDatasource.UseAnonymousAuthentication = true;
-            northWindCustomersDatasource.Url = "http://northwind.servicestack.net/Customers.csv";
-            northWindCustomersDatasource.Title = "Northwind Customers";
-            datasources.Add(northWindCustomersDatasource);
+            //var northWindCustomersDatasource = new RVWebResourceDataSource();
+            //northWindCustomersDatasource.Id = "northwindCustomersDataSource";
+            //northWindCustomersDatasource.UseAnonymousAuthentication = true;
+            //northWindCustomersDatasource.Url = "http://northwind.servicestack.net/Customers.csv";
+            //northWindCustomersDatasource.Title = "Northwind Customers";
+            //datasources.Add(northWindCustomersDatasource);
 
             var northWindOrdersDatasource = new RVWebResourceDataSource();
             northWindOrdersDatasource.Id = "northwindOrdersDataSource";
             northWindOrdersDatasource.UseAnonymousAuthentication = true;
-            northWindOrdersDatasource.Url = "http://northwind.servicestack.net/query/orders.json";
+            //northWindOrdersDatasource.Url = "http://northwind.servicestack.net/query/orders.json";
+
+            northWindOrdersDatasource.Url = "https://northwindcloud.azurewebsites.net/api/orders";
+
             northWindOrdersDatasource.Title = "Northwind Orders";
             datasources.Add(northWindOrdersDatasource);
 
